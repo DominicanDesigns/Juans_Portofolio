@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Contact — Juan's Page</title>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="top-nav">
+      <div class="dropdown">
+        <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Menu</button>
+        <div class="dropdown-content" aria-label="Main menu">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="rain-container" aria-hidden="true"></div>
+
+  <main class="hero">
+    <section class="hero-card">
+      <h1>Get in touch</h1>
+      <p class="lead">I'd love to hear about your project, question, or feedback. Send a message below and I'll reply as soon as I can.</p>
+
+      <div class="form-wrapper" aria-labelledby="contact-heading">
+        <form id="contact-form" novalidate>
+          <div class="form-row">
+            <label for="fname">First name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your first name" required>
+          </div>
+
+          <div class="form-row">
+            <label for="lname">Last name</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name">
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+
+          <div class="form-row">
+            <label for="subject">Message</label>
+            <textarea id="subject" name="subject" placeholder="Tell me about your project..." required style="height:150px"></textarea>
+          </div>
+
+          <div class="form-row">
+            <button class="btn submit-btn" type="submit">Send message</button>
+            <span id="form-status" class="success-message hidden" role="status" aria-live="polite"></span>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+
+</html>
