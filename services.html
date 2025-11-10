@@ -14,53 +14,66 @@
             <div class="dropdown">
                 <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Menu</button>
                 <div class="dropdown-content" aria-label="Main menu">
-                    <a href="index.html">Home</a>
-                    <a href="services.html">Services</a>
-                    <a href="contact.html">Contact</a>
+                    <a href="index.html" data-i18n="nav.home">Home</a>
+                    <a href="services.html" data-i18n="nav.services">Services</a>
+                    <a href="contact.html" data-i18n="nav.contact">Contact</a>
+
+                    <hr style="margin:6px 0;border:none;border-top:1px solid rgba(0,0,0,.06)">
+                    <label for="lang-select" style="display:block;padding:8px 12px;color:#333;font-weight:600">Language</label>
+                    <select id="lang-select" data-lang-select aria-label="Language" style="margin:8px 12px 12px;width:calc(100% - 24px);padding:8px;border-radius:6px;border:1px solid #ddd">
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                    </select>
                 </div>
             </div>
+            <select class="lang-select" data-lang-select aria-label="Language" style="margin-left:12px;padding:8px;border-radius:8px;border:1px solid rgba(0,0,0,.06);background:transparent;color:#111">
+                <option value="en">EN</option>
+                <option value="es">ES</option>
+                <option value="fr">FR</option>
+            </select>
         </nav>
     </header>
     <div class="rain-container" aria-hidden="true"></div>
 
     <div
         style="justify-content: center; padding: 30px; text-align: center; margin-top: 80px; background-color: rgba(255, 255, 255, 0.9); border-radius:15px;">
-    <h2 class="gradient-green-text">Our Services & Pricing</h2>
+    <h2 class="gradient-green-text" data-i18n="pricing.heading">Our Services & Pricing</h2>
                 <section class="pricing-section">
                     <div class="pricing-wrapper">
-                        <h2 class="gradient-green-text">Services & Pricing</h2>
-                        <p class="lead">Simple, transparent pricing. Choose a service or contact me for a custom quote.</p>
+                        <h2 class="gradient-green-text" data-i18n="pricing.title">Services & Pricing</h2>
+                        <p class="lead" data-i18n="pricing.lead">Simple, transparent pricing. Choose a service or contact me for a custom quote.</p>
 
                         <div class="pricing-grid" role="list">
                             <article class="plan" role="listitem" aria-labelledby="plan-web">
-                                <h3 id="plan-web" class="gradient-green-text">Website</h3>
+                                <h3 id="plan-web" class="gradient-green-text" data-i18n="plan.web">Website</h3>
                                 <div class="price"><span class="currency">USD</span>$300</div>
                                 <ul class="features">
-                                    <li>Responsive design</li>
-                                    <li>SEO basics & performance checks</li>
-                                    <li>2 rounds of revisions</li>
+                                    <li data-i18n="plan.web.f1">Responsive design</li>
+                                    <li data-i18n="plan.web.f2">SEO basics & performance checks</li>
+                                    <li data-i18n="plan.web.f3">2 rounds of revisions</li>
                                 </ul>
                                 <a class="btn" href="website_details.html">Learn more</a>
                             </article>
 
                             <article class="plan recommended" role="listitem" aria-labelledby="plan-apps">
-                                <h3 id="plan-apps" class="gradient-green-text">Apps</h3>
+                                <h3 id="plan-apps" class="gradient-green-text" data-i18n="plan.apps">Apps</h3>
                                 <div class="price"><span class="currency">USD</span>$500</div>
                                 <ul class="features">
-                                    <li>Mobile & web-ready builds</li>
-                                    <li>Basic testing across devices</li>
-                                    <li>App store guidance</li>
+                                    <li data-i18n="plan.apps.f1">Mobile & web-ready builds</li>
+                                    <li data-i18n="plan.apps.f2">Basic testing across devices</li>
+                                    <li data-i18n="plan.apps.f3">App store guidance</li>
                                 </ul>
                                 <a class="btn" href="apps_details.html">Learn more</a>
                             </article>
 
                             <article class="plan" role="listitem" aria-labelledby="plan-maint">
-                                <h3 id="plan-maint" class="gradient-green-text">Maintenance</h3>
+                                <h3 id="plan-maint" class="gradient-green-text" data-i18n="plan.maint">Maintenance</h3>
                                 <div class="price"><span class="currency">USD</span>$150<span class="small"> / month</span></div>
                                 <ul class="features">
-                                    <li>Updates & backups</li>
-                                    <li>Security monitoring</li>
-                                    <li>Monthly report</li>
+                                    <li data-i18n="plan.maint.f1">Updates & backups</li>
+                                    <li data-i18n="plan.maint.f2">Security monitoring</li>
+                                    <li data-i18n="plan.maint.f3">Monthly report</li>
                                 </ul>
                                 <a class="btn" href="maintenance_details.html">Learn more</a>
                             </article>

@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Juan — web developer. Fast, responsive sites, apps and ongoing maintenance. See work, pricing and get in touch.">
+    <meta name="description"
+        content="Juan — web developer. Fast, responsive sites, apps and ongoing maintenance. See work, pricing and get in touch.">
     <link rel="stylesheet" href="style.css">
     <title>Juan Antonio Núñez - Web Developer</title>
 </head>
@@ -15,9 +16,19 @@
             <div class="dropdown">
                 <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Menu</button>
                 <div class="dropdown-content" aria-label="Main menu">
-                    <a href="index.html">Home</a>
-                    <a href="services.html">Services</a>
-                    <a href="contact.html">Contact</a>
+                    <a href="index.html" data-i18n="nav.home">Home</a>
+                    <a href="services.html" data-i18n="nav.services">Services</a>
+                    <a href="contact.html" data-i18n="nav.contact">Contact</a>
+
+                    <hr style="margin:6px 0;border:none;border-top:1px solid rgba(0,0,0,.06)">
+                    <label for="lang-select"
+                        style="display:block;padding:8px 12px;color:#333;font-weight:600">Language</label>
+                    <select id="lang-select" data-lang-select aria-label="Language"
+                        style="margin:8px 12px 12px;width:calc(100% - 24px);padding:8px;border-radius:6px;border:1px solid #ddd">
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                    </select>
                 </div>
             </div>
         </nav>
@@ -28,19 +39,29 @@
     <main class="hero">
         <section class="hero-card split-hero" aria-labelledby="hero-heading">
             <div class="hero-copy">
-                <h1 id="hero-heading">Design, Build & Launch modern websites</h1>
-                <p class="lead">I build fast, accessible and responsive sites that help businesses convert visitors into customers. I handle design, development, deployment and the initial support.</p>
+                <h1 id="hero-heading" data-i18n="hero.title">Design, Build & Launch modern websites</h1>
+                <p class="lead" data-i18n="hero.lead">I build fast, accessible and responsive sites that help businesses
+                    convert visitors into customers. I handle design, development, deployment and the initial support.
+                </p>
 
                 <div class="tech-icons" aria-hidden="true">
-                    <img class="HTML" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg" alt="HTML5" />
-                    <img class="CSS" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg" alt="CSS3" />
-                    <img class="JS" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" />
-                    <img class="Node" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg" alt="Node.js" />
+                    <img class="HTML"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg"
+                        alt="HTML5" />
+                    <img class="CSS"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg"
+                        alt="CSS3" />
+                    <img class="JS"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                        alt="JavaScript" />
+                    <img class="Node"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg"
+                        alt="Node.js" />
                 </div>
 
                 <div class="cta-group" role="group" aria-label="Primary calls to action">
-                    <a class="btn-cta" href="contact.html">Hire me — Get a quote</a>
-                    <a class="btn-ghost" href="services.html">See services</a>
+                    <a class="btn-cta" href="contact.html" data-i18n="cta.hire">Hire me — Get a quote</a>
+                    <a class="btn-ghost" href="services.html" data-i18n="cta.services">See services</a>
                 </div>
             </div>
 
@@ -50,31 +71,36 @@
         </section>
 
         <section class="section" aria-labelledby="services-heading">
-            <h2 id="services-heading">Services</h2>
-            <p class="lead">Simple, transparent services tailored to launch your idea.</p>
+            <h2 id="services-heading" data-i18n="services.heading">Services</h2>
+            <p class="lead" data-i18n="services.lead">Simple, transparent services tailored to launch your idea.</p>
             <div class="services-grid" role="list">
                 <div class="service-card" role="listitem">
-                    <h3>Websites</h3>
-                    <p>Responsive builds, content entry and basic SEO. Fast delivery and training.</p>
+                    <h3 data-i18n="service.web.title">Websites</h3>
+                    <p data-i18n="service.web.desc">Responsive builds, content entry and basic SEO. Fast delivery and
+                        training.</p>
                 </div>
                 <div class="service-card" role="listitem">
-                    <h3>Apps</h3>
-                    <p>Mobile and web apps, testing and store guidance for production-ready releases.</p>
+                    <h3 data-i18n="service.apps.title">Apps</h3>
+                    <p data-i18n="service.apps.desc">Mobile and web apps, testing and store guidance for
+                        production-ready releases.</p>
                 </div>
                 <div class="service-card" role="listitem">
-                    <h3>Maintenance</h3>
-                    <p>Updates, backups and security monitoring with monthly reports.</p>
+                    <h3 data-i18n="service.maint.title">Maintenance</h3>
+                    <p data-i18n="service.maint.desc">Updates, backups and security monitoring with monthly reports.</p>
                 </div>
             </div>
         </section>
 
         <section class="section" aria-labelledby="portfolio-heading">
-            <h2 id="portfolio-heading">Selected work</h2>
-            <p class="lead">A few examples of projects and themes I build.</p>
+            <h2 id="portfolio-heading" data-i18n="portfolio.heading">Selected work</h2>
+            <p class="lead" data-i18n="portfolio.lead">A few examples of projects and themes I build.</p>
             <div class="portfolio-grid" role="list">
-                <a class="portfolio-item" role="listitem" href="apps_details.html">Apps — Product launch</a>
-                <a class="portfolio-item" role="listitem" href="website_details.html">Website — Small business</a>
-                <a class="portfolio-item" role="listitem" href="maintenance_details.html">Maintenance — Ongoing plan</a>
+                <a class="portfolio-item" role="listitem" href="apps_details.html" data-i18n="portfolio.apps">Apps —
+                    Product launch</a>
+                <a class="portfolio-item" role="listitem" href="website_details.html"
+                    data-i18n="portfolio.website">Website — Small business</a>
+                <a class="portfolio-item" role="listitem" href="maintenance_details.html"
+                    data-i18n="portfolio.maintenance">Maintenance — Ongoing plan</a>
             </div>
         </section>
     </main>
