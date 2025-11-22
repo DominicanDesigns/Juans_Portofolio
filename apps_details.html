@@ -4,69 +4,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="App Development Process - Juan Antonio Núñez">
+    <title>App Development - Juan Antonio Núñez</title>
     <link rel="stylesheet" href="style.css">
-    <title>Juan's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
+    <div class="rain-container" aria-hidden="true"></div>
+
     <header class="site-header">
-        <nav class="top-nav">
-            <div class="dropdown">
-                <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Menu</button>
-                <div class="dropdown-content" aria-label="Main menu">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Juan<span>.dev</span></a>
+            <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
+                <a href="services.html" class="nav-link" data-i18n="nav.services">Services</a>
+                <a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
+                <select class="lang-select" data-lang-select aria-label="Language">
+                    <option value="en">EN</option>
+                    <option value="es">ES</option>
+                    <option value="fr">FR</option>
+                </select>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="card" style="max-width: 900px; margin: 0 auto;">
+                    <h1 data-i18n="apps.title" style="margin-bottom: 1.5rem; color: var(--accent-primary);">Apps Details
+                    </h1>
+
+                    <p data-i18n="apps.paragraph" style="font-size: 1.1rem; margin-bottom: 2rem;">
+                        When you purchase an app or product from me, I manage the end-to-end process so you get a
+                        polished, tested
+                        product ready for users. I cover planning, design, development, testing, deployment and initial
+                        support —
+                        all tailored to your project's needs.
+                    </p>
+
+                    <h2 data-i18n="apps.after"
+                        style="font-size: 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                        What I normally do after a purchase</h2>
+
+                    <ul style="list-style: disc; padding-left: 1.5rem; margin-bottom: 2rem; color: var(--text-muted);">
+                        <li style="margin-bottom: 0.5rem;"><strong>Requirements & planning</strong> — clarify features,
+                            target platforms, and delivery milestones.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Design & prototyping</strong> — wireframes and UI
+                            mockups with feedback rounds.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Implementation</strong> — development of the app,
+                            integrations, and content population as agreed.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Testing</strong> — unit, integration, and user
+                            acceptance testing across devices.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Deployment</strong> — publish to stores or set up
+                            hosting/CI, plus domain/SSL when needed.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Handover & docs</strong> — delivery of source,
+                            credentials, and brief training/documentation.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Post-launch support</strong> — 30 days of support
+                            included; ongoing maintenance plans are available.</li>
+                    </ul>
+
+                    <div
+                        style="background: rgba(16, 185, 129, 0.1); padding: 1.5rem; border-radius: 0.5rem; border: 1px solid var(--accent-glow);">
+                        <p style="margin-bottom: 0; color: var(--text-main);">
+                            Typical timeline: 3–12 weeks depending on complexity. For a tailored quote and timeline, <a
+                                href="contact.html" style="color: var(--accent-primary); font-weight: 600;">contact
+                                me</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Juan<span>.dev</span></h3>
+                    <p>Building the web, one pixel at a time.</p>
+                </div>
+                <div class="footer-links">
                     <a href="index.html" data-i18n="nav.home">Home</a>
                     <a href="services.html" data-i18n="nav.services">Services</a>
                     <a href="contact.html" data-i18n="nav.contact">Contact</a>
-
-                    <hr style="margin:6px 0;border:none;border-top:1px solid rgba(0,0,0,.06)">
-                    <label for="lang-select" style="display:block;padding:8px 12px;color:#333;font-weight:600">Language</label>
-                    <select id="lang-select" data-lang-select aria-label="Language" style="margin:8px 12px 12px;width:calc(100% - 24px);padding:8px;border-radius:6px;border:1px solid #ddd">
-                        <option value="en">English</option>
-                        <option value="es">Español</option>
-                        <option value="fr">Français</option>
-                    </select>
                 </div>
             </div>
-            <select class="lang-select" data-lang-select aria-label="Language" style="margin-left:12px;padding:8px;border-radius:8px;border:1px solid rgba(0,0,0,.06);background:transparent;color:#111">
-                <option value="en">EN</option>
-                <option value="es">ES</option>
-                <option value="fr">FR</option>
-            </select>
-        </nav>
-    </header>
-    <div class="rain-container" aria-hidden="true"></div>
-
-    <div
-        style="padding: 20px; text-align: center; margin-top: 80px; background-color: rgba(255, 255, 255, 0.9); width: 80%; margin: 80px auto; border-radius: 5px;">
-        <h1 data-i18n="apps.title" style="color:#04AA6D;">Apps Details</h1>
-
-        <p data-i18n="apps.paragraph" style="max-width:900px;margin:14px auto;line-height:1.6;color:#222;text-align:left;">
-            When you purchase an app or product from me, I manage the end-to-end process so you get a polished, tested
-            product ready for users. I cover planning, design, development, testing, deployment and initial support —
-            all
-            tailored to your project's needs.
-        </p>
-
-    <h2 data-i18n="apps.after" style="color:#04AA6D;margin-top:18px;text-align:center;">What I normally do after a purchase</h2>
-        <ul style="text-align:left;max-width:900px;margin:8px auto 18px;line-height:1.6;color:#333;">
-            <li><strong>Requirements & planning</strong> — clarify features, target platforms, and delivery milestones.
-            </li>
-            <li><strong>Design & prototyping</strong> — wireframes and UI mockups with feedback rounds.</li>
-            <li><strong>Implementation</strong> — development of the app, integrations, and content population as
-                agreed.</li>
-            <li><strong>Testing</strong> — unit, integration, and user acceptance testing across devices.</li>
-            <li><strong>Deployment</strong> — publish to stores or set up hosting/CI, plus domain/SSL when needed.</li>
-            <li><strong>Handover & docs</strong> — delivery of source, credentials, and brief training/documentation.
-            </li>
-            <li><strong>Post-launch support</strong> — 30 days of support included; ongoing maintenance plans are
-                available.</li>
-        </ul>
-
-        <p style="font-size:0.95em;color:#555;max-width:900px;margin:6px auto;text-align:left;">
-            Typical timeline: 3–12 weeks depending on complexity. For a tailored quote and timeline, <a
-                href="contact.html">contact me</a>.
-        </p>
-    </div>
+            <div class="copyright">
+                &copy;
+                <script>document.write(new Date().getFullYear())</script> Juan Antonio Núñez. All rights reserved.
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js" defer></script>
 </body>

@@ -1,113 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Juan — web developer. Fast, responsive sites, apps and ongoing maintenance. See work, pricing and get in touch.">
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Juan — Professional Web Developer. Building modern, fast, and accessible web experiences.">
     <title>Juan Antonio Núñez - Web Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <header class="site-header">
-        <nav class="top-nav" aria-label="Main navigation">
-            <div class="dropdown">
-                <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Menu</button>
-                <div class="dropdown-content" aria-label="Main menu">
-                    <a href="index.html" data-i18n="nav.home">Home</a>
-                    <a href="services.html" data-i18n="nav.services">Services</a>
-                    <a href="contact.html" data-i18n="nav.contact">Contact</a>
 
-                    <hr style="margin:6px 0;border:none;border-top:1px solid rgba(0,0,0,.06)">
-                    <label for="lang-select"
-                        style="display:block;padding:8px 12px;color:#333;font-weight:600">Language</label>
-                    <select id="lang-select" data-lang-select aria-label="Language"
-                        style="margin:8px 12px 12px;width:calc(100% - 24px);padding:8px;border-radius:6px;border:1px solid #ddd">
-                        <option value="en">English</option>
-                        <option value="es">Español</option>
-                        <option value="fr">Français</option>
-                    </select>
-                </div>
-            </div>
-        </nav>
-    </header>
-
+    <!-- Rain Animation Background -->
     <div class="rain-container" aria-hidden="true"></div>
 
-    <main class="hero">
-        <section class="hero-card split-hero" aria-labelledby="hero-heading">
-            <div class="hero-copy">
-                <h1 id="hero-heading" data-i18n="hero.title">Design, Build & Launch modern websites</h1>
-                <p class="lead" data-i18n="hero.lead">I build fast, accessible and responsive sites that help businesses
-                    convert visitors into customers. I handle design, development, deployment and the initial support.
-                </p>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Juan<span>.org</span></a>
+            
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                ☰
+            </button>
 
-                <div class="tech-icons" aria-hidden="true">
-                    <img class="HTML"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg"
-                        alt="HTML5" />
-                    <img class="CSS"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg"
-                        alt="CSS3" />
-                    <img class="JS"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-                        alt="JavaScript" />
-                    <img class="Node"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg"
-                        alt="Node.js" />
-                </div>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link active" data-i18n="nav.home">Home</a>
+                <a href="services.html" class="nav-link" data-i18n="nav.services">Services</a>
+                <a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
+                
+                <select class="lang-select" data-lang-select aria-label="Language">
+                    <option value="en">EN</option>
+                    <option value="es">ES</option>
+                    <option value="fr">FR</option>
+                </select>
+            </nav>
+        </div>
+    </header>
 
-                <div class="cta-group" role="group" aria-label="Primary calls to action">
-                    <a class="btn-cta" href="contact.html" data-i18n="cta.hire">Hire me — Get a quote</a>
-                    <a class="btn-ghost" href="services.html" data-i18n="cta.services">See services</a>
-                </div>
-            </div>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1 data-i18n="hero.title">Design, Build & Launch <span class="text-gradient">Modern Websites</span></h1>
+                    <p class="lead" data-i18n="hero.lead">I build fast, accessible and responsive sites that help businesses convert visitors into customers. Full-cycle development from concept to launch.</p>
+                    
+                    <div class="cta-group">
+                        <a href="contact.html" class="btn btn-primary" data-i18n="cta.hire">Hire Me</a>
+                        <a href="services.html" class="btn btn-secondary" data-i18n="cta.services">View Services</a>
+                    </div>
 
-            <div class="hero-visual" aria-hidden="true">
-                <img class="HomeImage" src="Sun.gif" alt="Animated Sun" />
-            </div>
-        </section>
-
-        <section class="section" aria-labelledby="services-heading">
-            <h2 id="services-heading" data-i18n="services.heading">Services</h2>
-            <p class="lead" data-i18n="services.lead">Simple, transparent services tailored to launch your idea.</p>
-            <div class="services-grid" role="list">
-                <div class="service-card" role="listitem">
-                    <h3 data-i18n="service.web.title">Websites</h3>
-                    <p data-i18n="service.web.desc">Responsive builds, content entry and basic SEO. Fast delivery and
-                        training.</p>
+                    <div class="tech-stack">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                    </div>
                 </div>
-                <div class="service-card" role="listitem">
-                    <h3 data-i18n="service.apps.title">Apps</h3>
-                    <p data-i18n="service.apps.desc">Mobile and web apps, testing and store guidance for
-                        production-ready releases.</p>
-                </div>
-                <div class="service-card" role="listitem">
-                    <h3 data-i18n="service.maint.title">Maintenance</h3>
-                    <p data-i18n="service.maint.desc">Updates, backups and security monitoring with monthly reports.</p>
+                
+                <div class="hero-visual">
+                    <!-- Using a placeholder for now, can be replaced with a better asset or the gif -->
+                    <img src="Sun.gif" alt="Creative Visual" class="hero-img">
                 </div>
             </div>
         </section>
 
-        <section class="section" aria-labelledby="portfolio-heading">
-            <h2 id="portfolio-heading" data-i18n="portfolio.heading">Selected work</h2>
-            <p class="lead" data-i18n="portfolio.lead">A few examples of projects and themes I build.</p>
-            <div class="portfolio-grid" role="list">
-                <a class="portfolio-item" role="listitem" href="apps_details.html" data-i18n="portfolio.apps">Apps —
-                    Product launch</a>
-                <a class="portfolio-item" role="listitem" href="website_details.html"
-                    data-i18n="portfolio.website">Website — Small business</a>
-                <a class="portfolio-item" role="listitem" href="maintenance_details.html"
-                    data-i18n="portfolio.maintenance">Maintenance — Ongoing plan</a>
-                <a class="portfolio-item" role="listitem" href="services.html" data-i18n="portfolio.domain">Domain
-                    registration</a>
+        <!-- Services Preview -->
+        <section class="section" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="services.heading">My Services</h2>
+                    <p data-i18n="services.lead">Professional solutions tailored to your business needs.</p>
+                </div>
+
+                <div class="grid-3">
+                    <div class="card">
+                        <div class="card-icon">💻</div>
+                        <h3 data-i18n="service.web.title">Web Development</h3>
+                        <p data-i18n="service.web.desc">Responsive websites built with modern technologies. SEO-friendly and performance optimized.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">📱</div>
+                        <h3 data-i18n="service.apps.title">App Development</h3>
+                        <p data-i18n="service.apps.desc">Cross-platform mobile and web applications. From prototype to app store launch.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🛠️</div>
+                        <h3 data-i18n="service.maint.title">Maintenance</h3>
+                        <p data-i18n="service.maint.desc">Ongoing support, security updates, and backups to keep your business running smoothly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Preview -->
+        <section class="section" style="background: rgba(255,255,255,0.02);">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="portfolio.heading">Selected Work</h2>
+                    <p data-i18n="portfolio.lead">Recent projects and collaborations.</p>
+                </div>
+
+                <div class="grid-3">
+                    <a href="apps_details.html" class="card">
+                        <h3 data-i18n="portfolio.apps">Apps</h3>
+                        <p>Product Launch & Development</p>
+                        <span class="btn-link" style="color: var(--accent-primary); font-weight: 600; margin-top: 1rem; display: block;">View Details &rarr;</span>
+                    </a>
+                    <a href="website_details.html" class="card">
+                        <h3 data-i18n="portfolio.website">Websites</h3>
+                        <p>Small Business Solutions</p>
+                        <span class="btn-link" style="color: var(--accent-primary); font-weight: 600; margin-top: 1rem; display: block;">View Details &rarr;</span>
+                    </a>
+                    <a href="maintenance_details.html" class="card">
+                        <h3 data-i18n="portfolio.maintenance">Maintenance</h3>
+                        <p>Long-term Support Plans</p>
+                        <span class="btn-link" style="color: var(--accent-primary); font-weight: 600; margin-top: 1rem; display: block;">View Details &rarr;</span>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
 
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Juan<span>.dev</span></h3>
+                    <p>Building the web, one pixel at a time.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html" data-i18n="nav.home">Home</a>
+                    <a href="services.html" data-i18n="nav.services">Services</a>
+                    <a href="contact.html" data-i18n="nav.contact">Contact</a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; <script>document.write(new Date().getFullYear())</script> Juan Antonio Núñez. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
     <script src="script.js" defer></script>
 </body>
-
 </html>

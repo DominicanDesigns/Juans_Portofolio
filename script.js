@@ -1,4 +1,19 @@
 /* Improved script: rain + accessible dropdowns + centralized chat/Tawk loader */
+
+// ---------- Mobile Menu Toggle ----------
+function initMobileMenu() {
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.nav-links');
+
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      const expanded = nav.classList.contains('active');
+      toggle.setAttribute('aria-expanded', expanded);
+    });
+  }
+}
+
 // ---------- Rain effect (efficient DOM + debounce) ----------
 function createRain() {
   const container = document.querySelector('.rain-container');
@@ -40,53 +55,6 @@ function initRain() {
     _resizeTimer = setTimeout(createRain, 240);
   });
 }
-
-
-// ---------- Accessible dropdown handling ----------
-function initDropdowns() {
-  const dropdowns = document.querySelectorAll('.dropdown');
-  dropdowns.forEach(dd => {
-    const btn = dd.querySelector('.dropbtn');
-    const menu = dd.querySelector('.dropdown-content');
-    if (!btn || !menu) return;
-
-    // ensure initial aria state
-    btn.setAttribute('aria-expanded', 'false');
-    btn.setAttribute('aria-controls', menu.id || '');
-
-    function open() {
-      dd.classList.add('open');
-      btn.setAttribute('aria-expanded', 'true');
-    }
-    function close() {
-      dd.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
-    }
-
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      if (dd.classList.contains('open')) close(); else open();
-    });
-
-    // keyboard support
-    btn.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') { close(); btn.focus(); }
-      if (e.key === 'ArrowDown') { e.preventDefault(); open(); const first = menu.querySelector('a, button, [tabindex]:not([tabindex="-1"])'); if (first) first.focus(); }
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (dd.classList.contains('open')) close(); else open(); }
-    });
-
-    // handle Esc inside the menu
-    menu.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') { close(); btn.focus(); }
-    });
-
-    // close on outside click
-    document.addEventListener('click', (ev) => {
-      if (!dd.contains(ev.target)) close();
-    });
-  });
-}
-
 
 // ---------- Centralized Tawk loader + minimal chat fallback ----------
 const TAWK_SRC = 'https://embed.tawk.to/6617e510a0c6737bd12ac230/1hr6ldik8';
@@ -214,9 +182,9 @@ const _i18n = {
     'portfolio.heading': 'Selected work',
     'portfolio.lead': 'A few examples of projects and themes I build.',
     'portfolio.apps': 'Apps — Product launch',
-  'portfolio.website': 'Website — Small business',
-  'portfolio.maintenance': 'Maintenance — Ongoing plan',
-  'portfolio.domain': 'Domain registration',
+    'portfolio.website': 'Website — Small business',
+    'portfolio.maintenance': 'Maintenance — Ongoing plan',
+    'portfolio.domain': 'Domain registration',
     'contact.getintouch': 'Get in touch',
     'contact.lead': "I'd love to hear about your project, question, or feedback. Send a message below and I'll reply as soon as I can.",
     'form.firstname': 'First name',
@@ -281,9 +249,9 @@ const _i18n = {
     'portfolio.heading': 'Trabajo seleccionado',
     'portfolio.lead': 'Algunos ejemplos de proyectos y temas que construyo.',
     'portfolio.apps': 'Aplicaciones — Lanzamiento de producto',
-  'portfolio.website': 'Sitio web — Pequeño negocio',
-  'portfolio.maintenance': 'Mantenimiento — Plan continuo',
-  'portfolio.domain': 'Registro de dominios',
+    'portfolio.website': 'Sitio web — Pequeño negocio',
+    'portfolio.maintenance': 'Mantenimiento — Plan continuo',
+    'portfolio.domain': 'Registro de dominios',
     'contact.getintouch': 'Contacta',
     'contact.lead': 'Me encantaría saber sobre tu proyecto, pregunta o comentario. Envía un mensaje abajo y responderé lo antes posible.',
     'form.firstname': 'Nombre',
@@ -320,10 +288,10 @@ const _i18n = {
     'plan.maint.f1': 'Actualizaciones y copias de seguridad',
     'plan.maint.f2': 'Monitoreo de seguridad',
     'plan.maint.f3': 'Informe mensual',
-  'plan.domain': 'Registro de dominios',
-  'plan.domain.price': 'Contacta para precio',
-  'plan.domain.f1': 'Registro único y asistencia de transferencia',
-  'plan.domain.f2': 'Privacidad de dominio y configuración DNS',
+    'plan.domain': 'Registro de dominios',
+    'plan.domain.price': 'Contacta para precio',
+    'plan.domain.f1': 'Registro único y asistencia de transferencia',
+    'plan.domain.f2': 'Privacidad de dominio y configuración DNS',
     'status.fill_required': 'Por favor completa los campos obligatorios.',
     'status.opening_mail': 'Abriendo tu cliente de correo...',
     'status.mail_fail': 'Si tu cliente de correo no se abrió, por favor envía un email a',
@@ -347,9 +315,9 @@ const _i18n = {
     'portfolio.heading': 'Travaux sélectionnés',
     'portfolio.lead': 'Quelques exemples de projets et thèmes que je construis.',
     'portfolio.apps': 'Apps — Lancement de produit',
-  'portfolio.website': 'Site web — Petite entreprise',
-  'portfolio.maintenance': 'Maintenance — Plan continu',
-  'portfolio.domain': 'Enregistrement de domaine',
+    'portfolio.website': 'Site web — Petite entreprise',
+    'portfolio.maintenance': 'Maintenance — Plan continu',
+    'portfolio.domain': 'Enregistrement de domaine',
     'contact.getintouch': 'Contactez-moi',
     'contact.lead': "J'aimerais connaître votre projet, question ou retour. Envoyez un message ci-dessous et je répondrai dès que possible.",
     'form.firstname': 'Prénom',
@@ -386,10 +354,10 @@ const _i18n = {
     'plan.maint.f1': 'Mises à jour & sauvegardes',
     'plan.maint.f2': 'Surveillance de sécurité',
     'plan.maint.f3': 'Rapport mensuel',
-  'plan.domain': 'Enregistrement de domaine',
-  'plan.domain.price': 'Contactez pour le prix',
-  'plan.domain.f1': "Enregistrement ponctuel & assistance au transfert",
-  'plan.domain.f2': "Confidentialité du domaine et configuration DNS",
+    'plan.domain': 'Enregistrement de domaine',
+    'plan.domain.price': 'Contactez pour le prix',
+    'plan.domain.f1': "Enregistrement ponctuel & assistance au transfert",
+    'plan.domain.f2': "Confidentialité du domaine et configuration DNS",
     'status.fill_required': 'Veuillez remplir les champs requis.',
     'status.opening_mail': 'Ouverture de votre client mail...',
     'status.mail_fail': 'Si votre client mail ne s\'est pas ouvert, envoyez un email à',
@@ -430,7 +398,7 @@ function applyTranslations(lang) {
 
     // set select(s) (any selector marked with data-lang-select)
     const selects = document.querySelectorAll('[data-lang-select]');
-    selects.forEach(s => { try { s.value = lang; } catch (e) {} });
+    selects.forEach(s => { try { s.value = lang; } catch (e) { } });
     localStorage.setItem('site_lang', lang);
   } catch (err) { console.error('i18n error', err); }
 }
@@ -451,59 +419,59 @@ function initI18n() {
 
 // ---------- Contact form / mailto handler (uses translations above) ----------
 function initContactForm() {
-      const form = document.getElementById('contact-form');
-      if (!form) return;
-      const status = document.getElementById('form-status');
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+  const status = document.getElementById('form-status');
 
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const fname = (form.firstname && form.firstname.value || '').trim();
-        const lname = (form.lastname && form.lastname.value || '').trim();
-        const email = (form.email && form.email.value || '').trim();
-        const message = (form.subject && form.subject.value || '').trim();
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const fname = (form.firstname && form.firstname.value || '').trim();
+    const lname = (form.lastname && form.lastname.value || '').trim();
+    const email = (form.email && form.email.value || '').trim();
+    const message = (form.subject && form.subject.value || '').trim();
 
-        // simple validation
-        if (!fname || !email || !message) {
-          if (status) {
-            status.classList.remove('hidden');
-            status.style.color = '#b02a2a';
-            status.textContent = _t('status.fill_required') || 'Please fill the required fields.';
-          }
-          return;
-        }
-
-        const to = 'DominicanDesigns@outlook.com';
-        const subject = encodeURIComponent('Contact from website — ' + (fname + (lname ? ' ' + lname : '')));
-        const body = encodeURIComponent(`Name: ${fname} ${lname}\nEmail: ${email}\n\nMessage:\n${message}`);
-
-        if (status) {
-          status.classList.remove('hidden');
-          status.style.color = '#0a8a3a';
-          status.textContent = _t('status.opening_mail') || 'Opening your mail client...';
-        }
-
-        // Use mailto to open user's mail app with prefilled content (works as fallback without server)
-        setTimeout(() => {
-          window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-          if (status) {
-            status.textContent = (_t('status.mail_fail') || 'If your mail client didn\'t open, please send an email to') + ' ' + to;
-          }
-        }, 250);
-
-        form.reset();
-      });
+    // simple validation
+    if (!fname || !email || !message) {
+      if (status) {
+        status.classList.remove('hidden');
+        status.style.color = '#ef4444';
+        status.textContent = _t('status.fill_required') || 'Please fill the required fields.';
+      }
+      return;
     }
+
+    const to = 'DominicanDesigns@outlook.com';
+    const subject = encodeURIComponent('Contact from website — ' + (fname + (lname ? ' ' + lname : '')));
+    const body = encodeURIComponent(`Name: ${fname} ${lname}\nEmail: ${email}\n\nMessage:\n${message}`);
+
+    if (status) {
+      status.classList.remove('hidden');
+      status.style.color = '#10b981';
+      status.textContent = _t('status.opening_mail') || 'Opening your mail client...';
+    }
+
+    // Use mailto to open user's mail app with prefilled content (works as fallback without server)
+    setTimeout(() => {
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+      if (status) {
+        status.textContent = (_t('status.mail_fail') || 'If your mail client didn\'t open, please send an email to') + ' ' + to;
+      }
+    }, 250);
+
+    form.reset();
+  });
+}
 
 // ---------- Init on DOM ready ----------
 window.addEventListener('DOMContentLoaded', () => {
   initRain();
-  initDropdowns();
+  initMobileMenu();
   // Load Tawk once (keeps previous behaviour of embedding Tawk by default)
   loadTawkOnce();
   // initialize i18n before other UI that may rely on text
   initI18n();
   // Then initialize fallback chat UI / safe API
-      // contact form handler (if present)
-      initContactForm();
+  // contact form handler (if present)
+  initContactForm();
   initChatUI();
 });

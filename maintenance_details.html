@@ -4,71 +4,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website Maintenance Plans - Juan Antonio Núñez">
+    <title>Maintenance - Juan Antonio Núñez</title>
     <link rel="stylesheet" href="style.css">
-    <title>Juan's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
+    <div class="rain-container" aria-hidden="true"></div>
+
     <header class="site-header">
-        <nav class="top-nav">
-            <div class="dropdown">
-                <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Menu</button>
-                <div class="dropdown-content" aria-label="Main menu">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Juan<span>.dev</span></a>
+            <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
+                <a href="services.html" class="nav-link" data-i18n="nav.services">Services</a>
+                <a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
+                <select class="lang-select" data-lang-select aria-label="Language">
+                    <option value="en">EN</option>
+                    <option value="es">ES</option>
+                    <option value="fr">FR</option>
+                </select>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="card" style="max-width: 900px; margin: 0 auto;">
+                    <h1 data-i18n="maint.title" style="margin-bottom: 1.5rem; color: var(--accent-primary);">Maintenance
+                        Details</h1>
+
+                    <p data-i18n="maint.paragraph" style="font-size: 1.1rem; margin-bottom: 2rem;">
+                        Purchasing a maintenance plan means I take ongoing responsibility for keeping your site healthy,
+                        secure and up-to-date.
+                    </p>
+
+                    <h2 data-i18n="maint.after"
+                        style="font-size: 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                        What I normally do after a maintenance purchase</h2>
+
+                    <ul style="list-style: disc; padding-left: 1.5rem; margin-bottom: 2rem; color: var(--text-muted);">
+                        <li style="margin-bottom: 0.5rem;"><strong>Updates</strong> — keeping CMS, plugins, and
+                            frameworks on the latest stable versions.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Backups</strong> — regular off-site backups to ensure
+                            data safety.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Security</strong> — monitoring for vulnerabilities
+                            and fixing them proactively.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Performance</strong> — regular checks to ensure the
+                            site loads fast.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Reports</strong> — a monthly summary of what was done
+                            and how the site is performing.</li>
+                    </ul>
+
+                    <div
+                        style="background: rgba(16, 185, 129, 0.1); padding: 1.5rem; border-radius: 0.5rem; border: 1px solid var(--accent-glow);">
+                        <p style="margin-bottom: 0; color: var(--text-main);">
+                            Peace of mind for your business. <a href="contact.html"
+                                style="color: var(--accent-primary); font-weight: 600;">Subscribe now</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Juan<span>.dev</span></h3>
+                    <p>Building the web, one pixel at a time.</p>
+                </div>
+                <div class="footer-links">
                     <a href="index.html" data-i18n="nav.home">Home</a>
                     <a href="services.html" data-i18n="nav.services">Services</a>
                     <a href="contact.html" data-i18n="nav.contact">Contact</a>
-
-                    <hr style="margin:6px 0;border:none;border-top:1px solid rgba(0,0,0,.06)">
-                    <label for="lang-select" style="display:block;padding:8px 12px;color:#333;font-weight:600">Language</label>
-                    <select id="lang-select" data-lang-select aria-label="Language" style="margin:8px 12px 12px;width:calc(100% - 24px);padding:8px;border-radius:6px;border:1px solid #ddd">
-                        <option value="en">English</option>
-                        <option value="es">Español</option>
-                        <option value="fr">Français</option>
-                    </select>
                 </div>
             </div>
-            <select class="lang-select" data-lang-select aria-label="Language" style="margin-left:12px;padding:8px;border-radius:8px;border:1px solid rgba(0,0,0,.06);background:transparent;color:#111">
-                <option value="en">EN</option>
-                <option value="es">ES</option>
-                <option value="fr">FR</option>
-            </select>
-        </nav>
-    </header>
-    <div class="rain-container" aria-hidden="true"></div>
-
-    <div
-        style="padding: 20px; text-align: center; margin-top: 80px; background-color: rgba(255, 255, 255, 0.9); width: 80%; margin: 80px auto; border-radius: 5px;">
-        <h1 data-i18n="maint.title" style="color:#04AA6D;">Maintenance Details</h1>
-
-        <p data-i18n="maint.paragraph" style="max-width:900px;margin:14px auto;line-height:1.6;color:#222;text-align:left;">
-            Purchasing a maintenance plan means I take ongoing responsibility for keeping your site healthy, secure and
-            up-to-date.
-            I handle updates, backups, security checks, performance tweaks and small content edits so your site keeps
-            working reliably.
-        </p>
-
-    <h2 data-i18n="maint.after" style="color:#04AA6D;margin-top:18px;text-align:center;">What I normally do after a maintenance purchase</h2>
-        <ul style="text-align:left;max-width:900px;margin:8px auto 18px;line-height:1.6;color:#333;">
-            <li><strong>Initial audit & setup</strong> — I run a full site audit, configure backups, monitoring, and
-                emergency access.</li>
-            <li><strong>Updates & patching</strong> — regular CMS, plugin and dependency updates with compatibility
-                checks.</li>
-            <li><strong>Backups</strong> — scheduled off-site backups and verification so recovery is fast if needed.
-            </li>
-            <li><strong>Security & monitoring</strong> — malware scans, basic hardening and uptime/performance
-                monitoring.</li>
-            <li><strong>Content & small changes</strong> — minor content edits and image updates as agreed in the plan.
-            </li>
-            <li><strong>Emergency fixes</strong> — prioritized response for critical issues (response time depends on
-                chosen plan).</li>
-            <li><strong>Monthly reports</strong> — short summaries of updates, backups and any recommendations.</li>
-        </ul>
-
-        <p style="font-size:0.95em;color:#555;max-width:900px;margin:6px auto;text-align:left;">
-            Plans are billed monthly or annually. The first month includes the setup audit and backup configuration. For
-            plan details and pricing, <a href="contact.html">get in touch</a> and I’ll recommend the best option.
-        </p>
-    </div>
+            <div class="copyright">
+                &copy;
+                <script>document.write(new Date().getFullYear())</script> Juan Antonio Núñez. All rights reserved.
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js" defer></script>
 </body>
