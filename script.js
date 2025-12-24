@@ -14,37 +14,57 @@ function initMobileMenu() {
   }
 }
 
-// ---------- Rain effect (efficient DOM + debounce) ----------
+// ---------- Rain effect (Financial Algorithm symbols) ----------
 function createRain() {
   const container = document.querySelector('.rain-container');
   if (!container) return;
-  // clear existing
   container.textContent = '';
 
-  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  // scale based on viewport but cap for performance devices
-  const density = Math.max(8, Math.round(window.innerWidth / 24));
-  const count = Math.min(120, density);
+  const symbols = '01$€£₿¥₮';
+  const density = Math.max(10, Math.round(window.innerWidth / 20));
+  const count = Math.min(150, density);
 
   const frag = document.createDocumentFragment();
   for (let i = 0; i < count; i++) {
     const el = document.createElement('span');
     el.className = 'rain-letter';
-    el.textContent = chars.charAt(Math.floor(Math.random() * chars.length));
+    el.textContent = symbols.charAt(Math.floor(Math.random() * symbols.length));
 
     const left = Math.random() * 100;
-    const size = Math.floor(Math.random() * 18) + 10;
-    const duration = (Math.random() * 4 + 2).toFixed(2);
-    const delay = (Math.random() * 6).toFixed(2);
+    const size = Math.floor(Math.random() * 20) + 12;
+    const duration = (Math.random() * 3 + 1.5).toFixed(2);
+    const delay = (Math.random() * 5).toFixed(2);
+    const opacity = (Math.random() * 0.5 + 0.1).toFixed(2);
 
     el.style.left = `${left}%`;
     el.style.fontSize = `${size}px`;
     el.style.animationDuration = `${duration}s`;
     el.style.animationDelay = `${delay}s`;
+    el.style.opacity = opacity;
+    el.style.color = Math.random() > 0.8 ? 'var(--accent-gold)' : 'var(--accent-primary)';
 
     frag.appendChild(el);
   }
   container.appendChild(frag);
+}
+
+// ---------- Typing Effect ----------
+function initTypingEffect() {
+  const heroTitle = document.querySelector('.hero-text h1 .text-gradient');
+  if (!heroTitle) return;
+
+  const originalText = heroTitle.textContent;
+  heroTitle.textContent = '';
+  let i = 0;
+
+  function type() {
+    if (i < originalText.length) {
+      heroTitle.textContent += originalText.charAt(i);
+      i++;
+      setTimeout(type, 100);
+    }
+  }
+  type();
 }
 
 let _resizeTimer = null;
@@ -179,11 +199,19 @@ const _i18n = {
     'service.apps.desc': 'Mobile and web apps, testing and store guidance for production-ready releases.',
     'service.maint.title': 'Maintenance',
     'service.maint.desc': 'Updates, backups and security monitoring with monthly reports.',
-    'portfolio.heading': 'Selected work',
-    'portfolio.lead': 'A few examples of projects and themes I build.',
+    'portfolio.heading': 'Sovereign Solutions',
+    'portfolio.lead': 'Ready-to-launch platforms powered by my earning algorithm.',
     'portfolio.apps': 'Apps — Product launch',
     'portfolio.website': 'Website — Small business',
     'portfolio.maintenance': 'Maintenance — Ongoing plan',
+    'algo.heading': 'The Sovereign Algorithm',
+    'algo.lead': 'My proprietary system powers the next generation of gig economies.',
+    'algo.profit.title': '15% Profit Logic',
+    'algo.profit.desc': 'Every task completed on the platform automatically generates a 15% commission for the owner, processed instantly via PayPal.',
+    'algo.p2p.title': 'P2P Economy',
+    'algo.p2p.desc': 'Users post tasks, other users complete them. A self-sustaining ecosystem built for growth and security.',
+    'algo.secure.title': 'True Escrow',
+    'algo.secure.desc': 'Money is only released when the Sovereign Admin approves the task. Total control over every transaction.',
     'portfolio.domain': 'Domain registration',
     'contact.getintouch': 'Get in touch',
     'contact.lead': "I'd love to hear about your project, question, or feedback. Send a message below and I'll reply as soon as I can.",
@@ -246,11 +274,19 @@ const _i18n = {
     'service.apps.desc': 'Aplicaciones móviles y web, testing y guía para publicación en tiendas.',
     'service.maint.title': 'Mantenimiento',
     'service.maint.desc': 'Actualizaciones, copias de seguridad y monitoreo de seguridad con informes mensuales.',
-    'portfolio.heading': 'Trabajo seleccionado',
-    'portfolio.lead': 'Algunos ejemplos de proyectos y temas que construyo.',
-    'portfolio.apps': 'Aplicaciones — Lanzamiento de producto',
+    'portfolio.heading': 'Soluciones Soberanas',
+    'portfolio.lead': 'Plataformas listas para lanzar impulsadas por mi algoritmo de ganancias.',
+    'portfolio.apps': 'Apps — Lanzamiento de producto',
     'portfolio.website': 'Sitio web — Pequeño negocio',
     'portfolio.maintenance': 'Mantenimiento — Plan continuo',
+    'algo.heading': 'El Algoritmo Soberano',
+    'algo.lead': 'Mi sistema propietario impulsa la próxima generación de economías gig.',
+    'algo.profit.title': 'Lógica de Ganancia 15%',
+    'algo.profit.desc': 'Cada tarea completada en la plataforma genera automáticamente una comisión del 15% para el propietario, procesada instantáneamente por PayPal.',
+    'algo.p2p.title': 'Economía P2P',
+    'algo.p2p.desc': 'Los usuarios publican tareas, otros las completan. Un ecosistema autosostenible construido para el crecimiento.',
+    'algo.secure.title': 'Garantía Real',
+    'algo.secure.desc': 'El dinero solo se libera cuando el Administrador Soberano aprueba la tarea. Control total sobre cada transacción.',
     'portfolio.domain': 'Registro de dominios',
     'contact.getintouch': 'Contacta',
     'contact.lead': 'Me encantaría saber sobre tu proyecto, pregunta o comentario. Envía un mensaje abajo y responderé lo antes posible.',
@@ -474,4 +510,5 @@ window.addEventListener('DOMContentLoaded', () => {
   // contact form handler (if present)
   initContactForm();
   initChatUI();
+  initTypingEffect();
 });
