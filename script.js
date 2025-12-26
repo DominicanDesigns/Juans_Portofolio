@@ -1,18 +1,6 @@
 /* Improved script: rain + accessible dropdowns + centralized chat/Tawk loader */
 
-// ---------- Mobile Menu Toggle ----------
-function initMobileMenu() {
-  const toggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('.nav-links');
 
-  if (toggle && nav) {
-    toggle.addEventListener('click', () => {
-      nav.classList.toggle('active');
-      const expanded = nav.classList.contains('active');
-      toggle.setAttribute('aria-expanded', expanded);
-    });
-  }
-}
 
 // ---------- Rain effect (Financial Algorithm symbols) ----------
 function createRain() {
@@ -199,19 +187,21 @@ const _i18n = {
     'service.apps.desc': 'Mobile and web apps, testing and store guidance for production-ready releases.',
     'service.maint.title': 'Maintenance',
     'service.maint.desc': 'Updates, backups and security monitoring with monthly reports.',
-    'portfolio.heading': 'Sovereign Solutions',
+    'gallery.heading': 'Featured Work',
+    'gallery.lead': 'Visual previews of deployed platforms.',
+    'portfolio.heading': 'Premium Solutions',
     'portfolio.lead': 'Ready-to-launch platforms powered by my earning algorithm.',
     'portfolio.apps': 'Apps — Product launch',
     'portfolio.website': 'Website — Small business',
     'portfolio.maintenance': 'Maintenance — Ongoing plan',
-    'algo.heading': 'The Sovereign Algorithm',
+    'algo.heading': 'The Earning Algorithm',
     'algo.lead': 'My proprietary system powers the next generation of gig economies.',
     'algo.profit.title': '15% Profit Logic',
     'algo.profit.desc': 'Every task completed on the platform automatically generates a 15% commission for the owner, processed instantly via PayPal.',
     'algo.p2p.title': 'P2P Economy',
     'algo.p2p.desc': 'Users post tasks, other users complete them. A self-sustaining ecosystem built for growth and security.',
     'algo.secure.title': 'True Escrow',
-    'algo.secure.desc': 'Money is only released when the Sovereign Admin approves the task. Total control over every transaction.',
+    'algo.secure.desc': 'Money is only released when the Admin approves the task. Total control over every transaction.',
     'portfolio.domain': 'Domain registration',
     'contact.getintouch': 'Get in touch',
     'contact.lead': "I'd love to hear about your project, question, or feedback. Send a message below and I'll reply as soon as I can.",
@@ -253,6 +243,8 @@ const _i18n = {
     'plan.domain.price': 'Contact for pricing',
     'plan.domain.f1': 'One-off registration & transfer assistance',
     'plan.domain.f2': 'Domain privacy and DNS setup',
+    'plan.web.premium': 'Premium Website',
+    'plan.web.f2.premium': 'High Performance & Optimization',
     // status messages
     'status.fill_required': 'Please fill the required fields.',
     'status.opening_mail': 'Opening your mail client...',
@@ -274,19 +266,21 @@ const _i18n = {
     'service.apps.desc': 'Aplicaciones móviles y web, testing y guía para publicación en tiendas.',
     'service.maint.title': 'Mantenimiento',
     'service.maint.desc': 'Actualizaciones, copias de seguridad y monitoreo de seguridad con informes mensuales.',
-    'portfolio.heading': 'Soluciones Soberanas',
+    'gallery.heading': 'Trabajos Destacados',
+    'gallery.lead': 'Vistas previas visuales de plataformas desplegadas.',
+    'portfolio.heading': 'Soluciones Premium',
     'portfolio.lead': 'Plataformas listas para lanzar impulsadas por mi algoritmo de ganancias.',
     'portfolio.apps': 'Apps — Lanzamiento de producto',
     'portfolio.website': 'Sitio web — Pequeño negocio',
     'portfolio.maintenance': 'Mantenimiento — Plan continuo',
-    'algo.heading': 'El Algoritmo Soberano',
+    'algo.heading': 'El Algoritmo de Ganancias',
     'algo.lead': 'Mi sistema propietario impulsa la próxima generación de economías gig.',
     'algo.profit.title': 'Lógica de Ganancia 15%',
     'algo.profit.desc': 'Cada tarea completada en la plataforma genera automáticamente una comisión del 15% para el propietario, procesada instantáneamente por PayPal.',
     'algo.p2p.title': 'Economía P2P',
     'algo.p2p.desc': 'Los usuarios publican tareas, otros las completan. Un ecosistema autosostenible construido para el crecimiento.',
     'algo.secure.title': 'Garantía Real',
-    'algo.secure.desc': 'El dinero solo se libera cuando el Administrador Soberano aprueba la tarea. Control total sobre cada transacción.',
+    'algo.secure.desc': 'El dinero solo se libera cuando el Administrador aprueba la tarea. Control total sobre cada transacción.',
     'portfolio.domain': 'Registro de dominios',
     'contact.getintouch': 'Contacta',
     'contact.lead': 'Me encantaría saber sobre tu proyecto, pregunta o comentario. Envía un mensaje abajo y responderé lo antes posible.',
@@ -328,6 +322,8 @@ const _i18n = {
     'plan.domain.price': 'Contacta para precio',
     'plan.domain.f1': 'Registro único y asistencia de transferencia',
     'plan.domain.f2': 'Privacidad de dominio y configuración DNS',
+    'plan.web.premium': 'Sitio web Premium',
+    'plan.web.f2.premium': 'Alto rendimiento y optimización',
     'status.fill_required': 'Por favor completa los campos obligatorios.',
     'status.opening_mail': 'Abriendo tu cliente de correo...',
     'status.mail_fail': 'Si tu cliente de correo no se abrió, por favor envía un email a',
@@ -348,6 +344,8 @@ const _i18n = {
     'service.apps.desc': 'Applications mobiles et web, tests et conseils pour la publication en production.',
     'service.maint.title': 'Maintenance',
     'service.maint.desc': 'Mises à jour, sauvegardes et surveillance de sécurité avec rapports mensuels.',
+    'gallery.heading': 'Travaux Récents',
+    'gallery.lead': 'Aperçus visuels des plateformes déployées.',
     'portfolio.heading': 'Travaux sélectionnés',
     'portfolio.lead': 'Quelques exemples de projets et thèmes que je construis.',
     'portfolio.apps': 'Apps — Lancement de produit',
@@ -394,6 +392,8 @@ const _i18n = {
     'plan.domain.price': 'Contactez pour le prix',
     'plan.domain.f1': "Enregistrement ponctuel & assistance au transfert",
     'plan.domain.f2': "Confidentialité du domaine et configuration DNS",
+    'plan.web.premium': 'Site web Premium',
+    'plan.web.f2.premium': 'Haute performance et optimisation',
     'status.fill_required': 'Veuillez remplir les champs requis.',
     'status.opening_mail': 'Ouverture de votre client mail...',
     'status.mail_fail': 'Si votre client mail ne s\'est pas ouvert, envoyez un email à',
@@ -501,7 +501,6 @@ function initContactForm() {
 // ---------- Init on DOM ready ----------
 window.addEventListener('DOMContentLoaded', () => {
   initRain();
-  initMobileMenu();
   // Load Tawk once (keeps previous behaviour of embedding Tawk by default)
   loadTawkOnce();
   // initialize i18n before other UI that may rely on text
